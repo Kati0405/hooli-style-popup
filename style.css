@@ -1,0 +1,140 @@
+body {
+    margin: 0;
+    padding: 25px;
+    font-family: sans-serif;
+}
+
+.main-nav > ul{
+    display: flex;
+    column-gap: 20px;
+    justify-content: end;
+    list-style: none;
+    align-items: center;
+}
+
+.main-nav ul li {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.main-nav li img {
+    width: 30px;
+    height: auto
+}
+
+.check__input {
+    position: absolute;
+    appearance: none;
+}
+
+.check__box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.popup-icon {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    width: 35px;
+    cursor: pointer;
+}
+.check__input:checked + .check__box .popup-icon {
+    border: 2px solid #a5c7fe;
+    border-radius: 10%;
+}
+
+.check__input--avatar {
+    width: 30px;
+    height: 30px;
+    border: 1px solid gray;
+    border-radius: 50%;
+}
+
+.check__input--outer:checked ~ .popup-menu {
+    display: block;
+}
+
+.check__input--outer:checked ~ .additional-popup {
+    display: none;
+}
+
+.popup-menu {
+    position: absolute;
+    max-height: 520px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    display: none;
+    top: 50px;
+    left: -200px;
+    overflow-y: scroll;
+}
+
+.popup-menu ul {
+    margin: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    grid-template-rows: repeat(3, auto);
+    row-gap: 20px;
+    padding-inline-start: unset;
+    
+}
+
+.popup-menu ul li {
+    font-size: 0.8em;
+    color: gray;
+    width: 90px;
+    height: 90px;
+    border: 1px solid transparent;
+    
+}
+
+a:-webkit-any-link:focus-visible {
+    outline-color: #a5c7fe;
+}
+
+.popup-menu ul li:hover {
+    border: 1px solid lightgray;
+    border-radius: 5%;
+}
+
+.popup-menu ul li a {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+}
+
+.popup-menu ul li a img {
+    height: 50px;
+    width: auto;
+}
+
+.more-btn {
+    line-height: 2em;
+    height: 2em;
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+.additional-popup {
+    display: none;
+}
+
+.check__input--inner:checked ~ .additional-popup {
+    display: block;
+}
